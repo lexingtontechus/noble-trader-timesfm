@@ -44,6 +44,5 @@ typer-slim==0.20.0
     # via huggingface-hub
 typing-extensions==4.15.0
     # via
-    #   anyio
     #   huggingface-hub
     #   typer-slim

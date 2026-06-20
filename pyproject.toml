@@ -13,15 +13,29 @@ license = {text = "Apache-2.0"}
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
-    "numpy>=1.26.4",
-    "huggingface_hub[cli]>=0.23.0",
-    "safetensors>=0.5.3",
+     "huggingface-hub>=1.0",
+    "numpy>=2.0",
+    "safetensors>=0.6",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+
 ]
 
 [project.optional-dependencies]
 torch = [
-    "torch>=2.0.0",
+    "torch>=2.4",
 ]
+
+[tool.uv.sources]
+torch = [
+    { index = "pytorch-cu124" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+
 flax = [
     "flax",
     "optax",
